@@ -1,63 +1,70 @@
+// src/pages/Home.jsx
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import SectionTitle from '../components/SectionTitle';
 
-export default function Home() {
+function Home() {
   return (
-    <>
+    <main className="px-4 sm:px-8 lg:px-16 py-8 space-y-16">
       <Hero />
 
-      <section className="px-6 sm:px-10 lg:px-20 py-12 bg-surface-light dark:bg-surface-dark">
-        <SectionTitle title="About Me" />
-        <p className="text-text-light dark:text-text-dark mb-4">
-          Learn about my journey, passions, and how I became a full-stack developer with a deep interest in AI & ML.
-        </p>
-        <Link
-          to="/about"
-          className="text-primary-light dark:text-primary-dark underline hover:opacity-80"
-        >
-          Read more →
-        </Link>
-      </section>
-
-      <section className="px-6 sm:px-10 lg:px-20 py-12 bg-muted-light dark:bg-muted-dark">
-        <SectionTitle title="Projects" />
-        <p className="text-text-light dark:text-text-dark mb-4">
-          Explore a curated list of my personal and collaborative projects showcasing my skills and problem-solving approach.
+      {/* Projects Preview */}
+      <section>
+        <SectionTitle title="Projects" subtitle="Things I've Built" />
+        <p className="text-muted-light dark:text-muted-dark max-w-2xl">
+          I’ve worked on a variety of full-stack projects that reflect both creativity and technical depth. Each project taught me something new.
         </p>
         <Link
           to="/projects"
-          className="text-primary-light dark:text-primary-dark underline hover:opacity-80"
+          className="inline-block mt-4 text-primary-light dark:text-primary-dark underline"
         >
-          View projects →
+          Explore Projects →
         </Link>
       </section>
 
-      <section className="px-6 sm:px-10 lg:px-20 py-12 bg-surface-light dark:bg-surface-dark">
-        <SectionTitle title="Skills" />
-        <p className="text-text-light dark:text-text-dark mb-4">
-          Check out the technologies and tools I'm proficient with, from frontend frameworks to backend systems.
+      {/* Skills Preview */}
+      <section>
+        <SectionTitle title="Skills" subtitle="Tech I Use" />
+        <p className="text-muted-light dark:text-muted-dark max-w-2xl">
+          From frontend finesse to backend architecture, my skillset covers tools and frameworks I use to bring ideas to life.
         </p>
         <Link
           to="/skills"
-          className="text-primary-light dark:text-primary-dark underline hover:opacity-80"
+          className="inline-block mt-4 text-primary-light dark:text-primary-dark underline"
         >
-          See skills →
+          See All Skills →
         </Link>
       </section>
 
-      <section className="px-6 sm:px-10 lg:px-20 py-12 bg-muted-light dark:bg-muted-dark">
-        <SectionTitle title="Contact" />
-        <p className="text-text-light dark:text-text-dark mb-4">
-          Got a question or opportunity? Reach out and let’s connect!
+      {/* Work Experience Preview */}
+      <section>
+        <SectionTitle title="Experience" subtitle="Where I've Worked" />
+        <p className="text-muted-light dark:text-muted-dark max-w-2xl">
+          My professional journey spans across impactful internships and freelance work, shaping the way I build software.
+        </p>
+        <Link
+          to="/experience"
+          className="inline-block mt-4 text-primary-light dark:text-primary-dark underline"
+        >
+          View Work Experience →
+        </Link>
+      </section>
+
+      {/* Contact Preview */}
+      <section>
+        <SectionTitle title="Get In Touch" subtitle="Let’s Connect" />
+        <p className="text-muted-light dark:text-muted-dark max-w-2xl">
+          Whether it's a potential collaboration or just a hello, I’d love to hear from you. Feel free to drop a message.
         </p>
         <Link
           to="/contact"
-          className="text-primary-light dark:text-primary-dark underline hover:opacity-80"
+          className="inline-block mt-4 text-primary-light dark:text-primary-dark underline"
         >
-          Contact me →
+          Contact Me →
         </Link>
       </section>
-    </>
+    </main>
   );
 }
+
+export default Home;

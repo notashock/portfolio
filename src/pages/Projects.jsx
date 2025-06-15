@@ -2,18 +2,18 @@ import SectionTitle from '../components/SectionTitle';
 import ProjectCard from '../components/ProjectCard';
 import projects from '../data/projects';
 
-export default function Projects() {
+function Projects() {
   return (
-    <div className="bg-surface-light dark:bg-surface-dark py-16 px-6 sm:px-10 lg:px-20">
-      <SectionTitle
-        title="Projects"
-        subtitle="A glimpse into some of my technical creations and contributions."
-      />
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <section className="px-4 sm:px-8 lg:px-16 py-8">
+      <SectionTitle title="Projects" subtitle="Some things I've built" />
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => (
-          <ProjectCard key={project.id} {...project} />
+          <ProjectCard key={project.id} project={project} />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
+
+export default Projects;

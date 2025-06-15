@@ -1,18 +1,22 @@
-const colorMap = {
-  js: 'bg-yellow-200 text-yellow-800 dark:bg-yellow-600 dark:text-white',
-  react: 'bg-blue-200 text-blue-800 dark:bg-blue-600 dark:text-white',
-  tailwind: 'bg-teal-200 text-teal-800 dark:bg-teal-600 dark:text-white',
-  node: 'bg-green-200 text-green-800 dark:bg-green-600 dark:text-white',
-  python: 'bg-purple-200 text-purple-800 dark:bg-purple-600 dark:text-white',
-  // add more...
-};
+import { Link } from 'react-router-dom';
+import SectionTitle from '../components/SectionTitle';
+import SkillBadge from '../components/SkillBadge';
+import skills from '../data/Skills';
 
-export default function SkillBadge({ name, color }) {
+function Skills() {
   return (
-    <span
-      className={`px-4 py-2 rounded-full text-sm font-medium ${colorMap[color] || 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-white'}`}
-    >
-      {name}
-    </span>
+    <section className="px-4 sm:px-8 lg:px-16 py-8">
+      <SectionTitle title="Skills" subtitle="What I Know" />
+
+      <div className="flex flex-wrap gap-4">
+        {skills.map((skill) => (
+          <Link key={skill.id} to={`/details/skills/${skill.id}`}>
+            <SkillBadge name={skill.title} />
+          </Link>
+        ))}
+      </div>
+    </section>
   );
 }
+
+export default Skills;

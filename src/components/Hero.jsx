@@ -6,14 +6,10 @@ export default function Hero() {
     >
       <div className="text-center max-w-3xl">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-heading-light dark:text-heading-dark mb-6">
-          Ashok Babu Bavireddy
+          Code speaks louder than words.
         </h1>
-        <p className="text-xl sm:text-2xl mb-4">
-          Engineering Student | Full Stack Developer
-        </p>
-        <p className="text-base sm:text-lg text-text-light dark:text-text-dark opacity-80">
-          Passionate about building beautiful, scalable web apps.<br />
-          Exploring the world of <span className="text-primary-light dark:text-primary-dark font-medium">Artificial Intelligence</span> and <span className="text-secondary-light dark:text-secondary-dark font-medium">Machine Learning</span>.
+        <p className="text-xl sm:text-2xl mb-6">
+          I’m <span className="font-semibold text-heading-light dark:text-heading-dark">Ashok</span> — engineering student, full-stack builder, and lowkey perfectionist. I don’t just write code. I craft experiences.
         </p>
         <div className="mt-8">
           <a

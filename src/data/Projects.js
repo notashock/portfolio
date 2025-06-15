@@ -1,21 +1,23 @@
 const projects = [
   {
-    id: 1,
+    id: 'proj1',
     title: 'Portfolio Website',
-    description: 'A personal portfolio built with React, Tailwind, and Vite.',
-    imageUrl: '/assets/portfolio.png',
-    liveLink: 'https://yourdomain.com',
-    githubLink: 'https://github.com/yourusername/portfolio',
+    subtitle: 'React + Tailwind + Vite',
+    summary: 'A responsive portfolio showcasing my skills and work using modern frontend tech stack.',
+    description: [
+      'Built using React and styled with TailwindCSS.',
+      'Supports dark/light mode with theme toggle.',
+      'Includes reusable components and dynamic routing via React Router.',
+    ],
+    tags: ['React', 'TailwindCSS', 'Vite'],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/your-username/portfolio' },
+      { label: 'Live Demo', url: 'https://yourportfolio.com' },
+    ],
+    source: 'Personal Project',
+    confidence: 'Very Confident',
   },
-  {
-    id: 2,
-    title: 'Todo App',
-    description: 'A simple yet functional Todo app with dark mode toggle.',
-    imageUrl: '/assets/todo.png',
-    liveLink: '',
-    githubLink: 'https://github.com/yourusername/todo-app',
-  },
-  // add more...
+  // Add more projects as needed
 ];
 
 export default projects;
