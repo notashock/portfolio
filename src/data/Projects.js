@@ -1,8 +1,8 @@
 const projects = [
   {
     id: 'proj1',
-    title: 'Portfolio Website',
-    subtitle: 'React + Tailwind + Vite',
+    title: 'OTT Streaming Platform',
+    subtitle: 'React + Tailwind + JavaScript',
     summary: 'A responsive portfolio showcasing my skills and work using modern frontend tech stack.',
     description: [
       'Built using React and styled with TailwindCSS.',
