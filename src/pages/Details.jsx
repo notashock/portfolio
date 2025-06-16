@@ -1,33 +1,61 @@
 import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import DetailsLayout from '../layout/DetailsLayout';
-
-import projects from '../data/projects';
-import skills from '../data/Skills';
-import experience from '../data/experience';
 
 function Details() {
   const { type, id } = useParams();
+  const [data, setData] = useState(null);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true);
 
-  let data;
+  useEffect(() => {
+    if (!type || !id) {
+      setError('Invalid route parameters');
+      setLoading(false);
+      return;
+    }
 
-  switch (type) {
-    case 'project':
-      data = projects.find((item) => item.id === id);
-      break;
-    case 'skills':
-      data = skills.find((item) => item.id === id);
-      break;
-    case 'experience':
-      data = experience.find((item) => item.id === id);
-      break;
-    default:
-      data = null;
+    const controller = new AbortController();
+
+    const fetchDetails = async () => {
+      try {
+        setLoading(true);
+        const res = await fetch(`http://localhost:5000/api/${type}/${id}`, {
+          signal: controller.signal,
+        });
+
+        if (!res.ok) throw new Error(`Failed to fetch ${type} data`);
+
+        const result = await res.json();
+        setData(result);
+        setError('');
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          setError(err.message || 'Something went wrong');
+          setData(null);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDetails();
+
+    return () => controller.abort();
+  }, [id, type]); // ✅ Corrected dependency array
+
+  if (loading) {
+    return (
+      <div className="text-center py-16 text-lg text-text-light dark:text-text-dark">
+        Loading...
+      </div>
+    );
   }
 
-  if (!data) {
+  if (error || !data) {
     return (
       <div className="text-center py-16 text-red-500 text-xl">
-        Not Found: Invalid ID or Type
+        {error || 'Invalid ID or Type'}
       </div>
     );
   }
@@ -40,11 +68,19 @@ function Details() {
       links={data.links}
     >
       <div className="space-y-4 text-base leading-relaxed text-text-light dark:text-text-dark">
-        {data.description.map((para, index) => (
+        {data.description?.map((para, index) => (
           <p key={index}>{para}</p>
         ))}
-        {data.source && <p><strong>Source:</strong> {data.source}</p>}
-        {data.confidence && <p><strong>Confidence:</strong> {data.confidence}</p>}
+        {data.source && (
+          <p>
+            <strong>Source:</strong> {data.source}
+          </p>
+        )}
+        {data.confidence && (
+          <p>
+            <strong>Confidence:</strong> {data.confidence}
+          </p>
+        )}
       </div>
     </DetailsLayout>
   );
