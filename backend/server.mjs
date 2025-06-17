@@ -4,6 +4,7 @@ import cors from 'cors';
 import connectDB from './config/db.js';
 import projectRoutes from './routes/projectRoutes.js';
 import skillRoutes from './routes/skillRoutes.js';
+import experienceRoutes from './routes/expRoutes.js';
 
 // Load environment variables
 dotenv.config();
@@ -20,7 +21,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/projects', projectRoutes);
-
+app.use('/api/experience', experienceRoutes);
 app.use('/api/skills', skillRoutes);
 
 
