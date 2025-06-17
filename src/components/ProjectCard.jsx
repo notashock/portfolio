@@ -1,9 +1,17 @@
-const ProjectCard = ({ project, onClick }) => {
+import { useNavigate } from 'react-router-dom';
+
+const ProjectCard = ({ project }) => {
+  const navigate = useNavigate();
+
   if (!project) return null;
+
+  const handleClick = () => {
+    navigate(`/details/projects/${project._id}`);
+  };
 
   return (
     <div
-      onClick={() => onClick(project._id)}
+      onClick={handleClick}
       className="cursor-pointer bg-surface-light dark:bg-surface-dark p-4 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300"
     >
       <h3 className="text-heading-light dark:text-heading-dark text-xl font-semibold mb-2">
