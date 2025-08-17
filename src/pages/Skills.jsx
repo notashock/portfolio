@@ -15,7 +15,7 @@ function Skills() {
 
       <div className="flex flex-wrap gap-4">
         {skills.map((skill) => (
-          <Link key={skill._id} to={`/details/skills/${skill._id}`}>
+          <Link key={skill._id} to={`/portfolio/details/skills/${skill._id}`}>
             <SkillBadge name={skill.title} />
           </Link>
         ))}

@@ -6,7 +6,7 @@ const ProjectCard = ({ project }) => {
   if (!project) return null;
 
   const handleClick = () => {
-    navigate(`/details/projects/${project._id}`);
+    navigate(`/portfolio/details/projects/${project._id}`);
   };
 
   return (

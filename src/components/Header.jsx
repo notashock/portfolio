@@ -8,7 +8,7 @@ export default function Header() {
     <header className="bg-surface-light dark:bg-surface-dark text-text-light dark:text-text-dark shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link
-          to="/"
+          to="/portfolio/"
           className="text-2xl font-bold text-heading-light dark:text-heading-dark"
         >
           Namaste
@@ -17,7 +17,7 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <ThemeToggle />
 
-          <Link to="/about" title="About Me">
+          <Link to="/portfolio/about" title="About Me">
             <img
               src={profilePic}
               alt="Profile"
