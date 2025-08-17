@@ -1,4 +1,4 @@
-import Skill from '../models/skill.js';
+import Skill from '../models/Skill.js';
 
 // @desc    Get all skills
 // @route   GET /api/skills
