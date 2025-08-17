@@ -20,9 +20,9 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/api/projects', projectRoutes);
-app.use('/api/experience', experienceRoutes);
-app.use('/api/skills', skillRoutes);
+app.use('/projects', projectRoutes);
+app.use('/experience', experienceRoutes);
+app.use('/skills', skillRoutes);
 
 
 // Root route
