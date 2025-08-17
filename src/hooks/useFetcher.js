@@ -14,7 +14,7 @@ export default function useFetcher(endpoint) {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`http://localhost:5000/api/${endpoint}`, {
+        const res = await fetch(`https://portfolio-oxcr.onrender.com/${endpoint}`, {
           signal: controller.signal,
         });
         if (!res.ok) throw new Error('Failed to fetch data');
