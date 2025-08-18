@@ -29,7 +29,7 @@ export default function Header() {
       className="fixed top-0 left-0 w-full z-50 
              backdrop-blur-lg bg-surface-light/80 dark:bg-surface-dark/80
              text-text-light dark:text-text-dark 
-             border-b border-white/10 
+             border-b rounded-b-lg border-white/10 
              animate-fadeSlideDown
              shadow-[0_2px_8px_-2px] shadow-accent-light/30 
              dark:shadow-accent-dark/30"

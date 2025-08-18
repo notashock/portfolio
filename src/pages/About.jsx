@@ -94,7 +94,7 @@ const About = () => {
               <SiCodechef />
             </a>
             <a
-              href="https://www.reddit.com/"
+              href="https://www.reddit.com/u/luca_kiddo28/s/g6QeSwfXlo"
               target="_blank"
               rel="noreferrer"
               className="text-2xl hover:text-primary-light dark:hover:text-primary-dark 
