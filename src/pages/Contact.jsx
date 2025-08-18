@@ -1,4 +1,4 @@
-import SectionTitle from '../components/SectionTitle';
+import SectionTitle from '../components/ui/SectionTitle';
 
 export default function Contact() {
   return (

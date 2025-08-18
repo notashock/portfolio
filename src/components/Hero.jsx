@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Hero() {
   return (
     <section
@@ -12,12 +14,12 @@ export default function Hero() {
           I’m <span className="font-semibold text-heading-light dark:text-heading-dark">Ashok</span> — engineering student, full-stack builder, and lowkey perfectionist. I don’t just write code. I craft experiences.
         </p>
         <div className="mt-8">
-          <a
-            href="#contact"
+          <Link
+            to="/portfolio/contact"
             className="inline-block px-6 py-3 bg-primary-light dark:bg-primary-dark text-white dark:text-surface-dark rounded-xl font-semibold shadow hover:bg-indigo-600 dark:hover:bg-indigo-300 transition"
           >
             Get in Touch
-          </a>
+          </Link>
         </div>
       </div>
     </section>

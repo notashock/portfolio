@@ -1,5 +1,5 @@
-import SectionTitle from '../components/SectionTitle';
-import SkillBadge from '../components/SkillBadge';
+import SectionTitle from '../components/ui/SectionTitle';
+import SkillBadge from '../components/ui/SkillBadge';
 import { Link } from 'react-router-dom';
 import useFetcher from '../hooks/useFetcher';
 
@@ -15,7 +15,7 @@ function Skills() {
 
       <div className="flex flex-wrap gap-4">
         {skills.map((skill) => (
-          <Link key={skill._id} to={`/portfolio/details/skills/${skill._id}`}>
+          <Link key={skill._id} to={`/details/skills/${skill._id}`}>
             <SkillBadge name={skill.title} />
           </Link>
         ))}

@@ -6,32 +6,32 @@ export default {
     extend: {
       colors: {
         surface: {
-          light: '#ffffff',     // Light background
-          dark: '#0f172a',       // Dark background
+          light: '#ffffff',   // White
+          dark: '#18181B',    // Neutral black (no navy!)
         },
         text: {
-          light: '#1e293b',     // Slate-800
-          dark: '#f1f5f9',       // Slate-100
+          light: '#1e293b',   // Slate-800
+          dark: '#f1f5f9',    // Slate-100
         },
         heading: {
-          light: '#0f172a',     // Slate-900
-          dark: '#f8fafc',       // Slate-50
+          light: '#0f172a',   // Slate-900
+          dark: '#f8fafc',    // Slate-50
         },
         primary: {
-          light: '#6366f1',     // Indigo-500
-          dark: '#818cf8',       // Indigo-400
+          light: '#16A34A',   // Emerald-600 (main green)
+          dark: '#22C55E',    // Emerald-500 (bright green on dark)
         },
         secondary: {
-          light: '#14b8a6',     // Teal-500
-          dark: '#5eead4',       // Teal-300
+          light: '#4ADE80',   // Emerald-400 (fresh accent green)
+          dark: '#86EFAC',    // Emerald-300 (lighter for dark mode contrast)
         },
         accent: {
-          light: '#f59e0b',     // Amber-500
-          dark: '#facc15',       // Amber-400
+          light: '#10B981',   // Emerald-500 (green accent in light)
+          dark: '#34D399',    // Emerald-400 (soft glowing green in dark)
         },
         muted: {
-          light: '#e2e8f0',     // Gray-200
-          dark: '#334155',       // Gray-700
+          light: '#e5e7eb',   // Gray-200 (subtle borders/light bg)
+          dark: '#374151',    // Gray-700 (neutral muted dark bg)
         },
       },
     },

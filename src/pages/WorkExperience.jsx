@@ -1,4 +1,4 @@
-import SectionTitle from '../components/SectionTitle';
+import SectionTitle from '../components/ui/SectionTitle';
 import { Link } from 'react-router-dom';
 import useFetcher from '../hooks/useFetcher';
 

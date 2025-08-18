@@ -1,7 +1,7 @@
 // src/pages/Home.jsx
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
-import SectionTitle from '../components/SectionTitle';
+import SectionTitle from '../components/ui/SectionTitle';
 
 function Home() {
   return (

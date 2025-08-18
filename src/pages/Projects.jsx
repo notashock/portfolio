@@ -1,6 +1,6 @@
 import useFetcher from '../hooks/useFetcher';
-import SectionTitle from '../components/SectionTitle';
-import ProjectCard from '../components/ProjectCard';
+import SectionTitle from '../components/ui/SectionTitle';
+import ProjectCard from '../components/ui/ProjectCard';
 
 function Projects() {
   const { data: projects, loading, error } = useFetcher('projects');
