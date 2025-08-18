@@ -18,8 +18,8 @@ function App() {
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
-          <Route path="/work-experience" element={<WorkExperience />} />
-          <Route path="/details/:id" element={<Details />} />
+          <Route path="/experience" element={<WorkExperience />} />
+          <Route path="/details/:type/:id" element={<Details />} />
         </Routes>
       </MainLayout>
     </Router>

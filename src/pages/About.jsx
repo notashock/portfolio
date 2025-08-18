@@ -40,9 +40,9 @@ const About = () => {
             About Me
           </h2>
           <p className="text-lg leading-relaxed">
-            Hey there! 👋 I’m{" "}
+            Hey there! I’m{" "}
             <span className="text-primary-light dark:text-primary-dark font-semibold">
-              Kiddo
+              Ashok
             </span>
             , an engineering student passionate about building thoughtful digital
             experiences. I enjoy solving problems through code and expressing
@@ -52,7 +52,7 @@ const About = () => {
           <p className="text-lg leading-relaxed">
             Whether I’m developing full-stack applications, diving into
             algorithms, or exploring the world of machine learning and AI, I
-            love pushing boundaries and learning by doing. 🚀
+            love pushing boundaries and learning by doing.
           </p>
 
           {/* Social Links */}

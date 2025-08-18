@@ -10,11 +10,11 @@ export default {
           dark: '#18181B',    // Neutral black (no navy!)
         },
         text: {
-          light: '#1e293b',   // Slate-800
+          light: 'gray-500',   // Slate-800
           dark: '#f1f5f9',    // Slate-100
         },
         heading: {
-          light: '#0f172a',   // Slate-900
+          light: 'gray-500',   // Slate-900
           dark: '#f8fafc',    // Slate-50
         },
         primary: {

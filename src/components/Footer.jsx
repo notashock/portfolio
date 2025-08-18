@@ -16,8 +16,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative py-4 px-6 bg-surface-light/80 dark:bg-surface-dark/80 
-                       shadow-[2px_-2px_8px_-2px] shadow-accent-light/30
+    <footer className="fixed bottom-0 left-0 w-full z-50 py-4 px-6 bg-surface-light/80 
+                       dark:bg-surface-dark/80 shadow-[2px_-2px_8px_-2px] shadow-accent-light/30
                        dark:shadow-[2px_-2px_8px_-2px] dark:shadow-accent-dark/30
                        backdrop-blur-md rounded-t-lg overflow-hidden">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
