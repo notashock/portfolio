@@ -1,4 +1,3 @@
-// src/components/Header.jsx
 import { Link } from 'react-router-dom';
 import ThemeToggle from './ui/ThemeToggle';
 import profilePic from '../assets/profile.jpg';
@@ -26,46 +25,59 @@ export default function Header() {
   }, [greetings.length]);
 
   return (
-    <header className="bg-surface-light dark:bg-surface-dark text-text-light dark:text-text-dark shadow-md">
+    <header
+      className="fixed top-0 left-0 w-full z-50 
+             backdrop-blur-lg bg-surface-light/80 dark:bg-surface-dark/80
+             text-text-light dark:text-text-dark 
+             border-b border-white/10 
+             animate-fadeSlideDown
+             shadow-[0_2px_8px_-2px] shadow-accent-light/30 
+             dark:shadow-accent-dark/30"
+    >
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
 
         {/* Rolling Greeting */}
-        <Link to="/" className="overflow-hidden h-10 flex items-center">
+        <Link to="/" className="overflow-hidden h-10 flex items-center group">
           <div
             key={index}
-            className={`text-2xl font-bold transition-all duration-700 ease-in-out animate-slide 
+            className={`text-2xl font-extrabold transition-all duration-700 ease-in-out animate-slide 
               ${greetings[index].lang === "Telugu" 
                 ? "text-accent-light dark:text-accent-dark" 
                 : "text-heading-light dark:text-heading-dark"
-              }`}
+              } 
+              group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]`}
           >
             {greetings[index].text}
           </div>
         </Link>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-6">
           <ThemeToggle />
           <Link to="/about" title="About Me" className="relative group">
-            {/* Glowing animated ring */}
-            <div className="absolute inset-0 rounded-full border-2 
-                           border-primary-light dark:border-primary-dark 
-                           animate-pulse opacity-60 group-hover:opacity-100 transition" />
+            {/* Glowing animated halo */}
+            <div className="absolute inset-0 rounded-full 
+                            bg-primary-light/30 dark:bg-primary-dark/30
+                            blur-xl opacity-60 
+                            group-hover:opacity-100 
+                            animate-pulse-glow" />
 
             {/* Profile Image */}
             <img
               src={profilePic}
               alt="Profile"
-              className="w-12 h-12 rounded-full border-2 
+              className="relative w-12 h-12 rounded-full border-2 
                          border-primary-light dark:border-primary-dark 
-                         shadow-md group-hover:scale-110 
+                         shadow-lg group-hover:scale-110 
                          group-hover:rotate-3 
-                         group-hover:shadow-xl 
                          transition-all duration-500 ease-in-out"
             />
 
-            {/* Overlay glow effect */}
-            <div className="absolute inset-0 rounded-full bg-primary-light/20 dark:bg-primary-dark/20 
-                            opacity-0 group-hover:opacity-50 transition duration-500" />
+            {/* Overlay shimmer effect */}
+            <div className="absolute inset-0 rounded-full 
+                            bg-gradient-to-r from-primary-light/40 to-transparent 
+                            dark:from-primary-dark/40
+                            opacity-0 group-hover:opacity-60 
+                            animate-shimmer" />
           </Link>
         </div>
       </div>
