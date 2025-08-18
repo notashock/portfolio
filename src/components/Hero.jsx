@@ -41,7 +41,7 @@ export default function Hero() {
         </p>
         <div className="mt-6">
           <Link
-            to="/portfolio/contact"
+            to="/contact"
             className="inline-block px-6 py-3 bg-primary-light dark:bg-primary-dark 
                        text-white dark:text-surface-dark rounded-xl font-semibold 
                        shadow-lg hover:shadow-accent-light/40 dark:hover:shadow-accent-dark/40 

@@ -15,7 +15,7 @@ function Home() {
           I’ve worked on a variety of full-stack projects that reflect both creativity and technical depth. Each project taught me something new.
         </p>
         <Link
-          to="/portfolio/projects"
+          to="/projects"
           className="inline-block mt-4 text-primary-light dark:text-primary-dark underline"
         >
           Explore Projects →
@@ -29,7 +29,7 @@ function Home() {
           From frontend finesse to backend architecture, my skillset covers tools and frameworks I use to bring ideas to life.
         </p>
         <Link
-          to="/portfolio/skills"
+          to="/skills"
           className="inline-block mt-4 text-primary-light dark:text-primary-dark underline"
         >
           See All Skills →
@@ -43,7 +43,7 @@ function Home() {
           My professional journey spans across impactful internships and freelance work, shaping the way I build software.
         </p>
         <Link
-          to="/portfolio/experience"
+          to="/experience"
           className="inline-block mt-4 text-primary-light dark:text-primary-dark underline"
         >
           View Work Experience →
@@ -57,7 +57,7 @@ function Home() {
           Whether it's a potential collaboration or just a hello, I’d love to hear from you. Feel free to drop a message.
         </p>
         <Link
-          to="/portfolio/contact"
+          to="/contact"
           className="inline-block mt-4 text-primary-light dark:text-primary-dark underline"
         >
           Contact Me →
