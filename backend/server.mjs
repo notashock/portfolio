@@ -5,7 +5,7 @@ import connectDB from './config/db.js';
 import projectRoutes from './routes/projectRoutes.js';
 import skillRoutes from './routes/skillRoutes.js';
 import experienceRoutes from './routes/expRoutes.js';
-import certificationRoutes from './routes/certificationRoutes.js';
+import certificationRoutes from './routes/CertificationRoutes.js';
 
 // Load environment variables
 dotenv.config();
