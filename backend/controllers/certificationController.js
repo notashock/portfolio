@@ -1,4 +1,4 @@
-import Certification from "../models/certificationModel.js";
+import Certification from "../models/CertificationModel.js";
 
 // @desc    Get all certifications
 // @route   GET /api/certifications
