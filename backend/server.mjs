@@ -5,6 +5,7 @@ import connectDB from './config/db.js';
 import projectRoutes from './routes/projectRoutes.js';
 import skillRoutes from './routes/skillRoutes.js';
 import experienceRoutes from './routes/expRoutes.js';
+import certificationRoutes from './routes/certificationRoutes.js';
 
 // Load environment variables
 dotenv.config();
@@ -23,6 +24,7 @@ app.use(express.json());
 app.use('/projects', projectRoutes);
 app.use('/experience', experienceRoutes);
 app.use('/skills', skillRoutes);
+app.use('/certificates', certificationRoutes); // Assuming certificates are handled in skillRoutes
 
 
 // Root route
