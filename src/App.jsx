@@ -37,11 +37,11 @@ function App() {
           <Route path="/chat" element={<ChatPage />} />
 
           {/* Auth + Protected */}
-          <Route path="/login" element={<Login />} />
+          {/* <Route path="/login" element={<Login />} />
           <Route
             path="/add-new"
             element={<ProtectedRoute element={<AddNew />} />}
-          />
+          /> */}
         </Routes>
       </MainLayout>
     </Router>
