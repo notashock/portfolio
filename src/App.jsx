@@ -5,7 +5,6 @@ import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
-import Certifications from "./pages/Certifications";
 import WorkExperience from "./pages/WorkExperience";
 import Details from "./pages/Details";
 import Login from "./pages/Login";
@@ -33,7 +32,6 @@ function App() {
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
-          <Route path="/certifications" element={<Certifications />} />
           <Route path="/experience" element={<WorkExperience />} />
           <Route path="/details/:type/:id" element={<Details />} />
           <Route path="/chat" element={<ChatPage />} />
