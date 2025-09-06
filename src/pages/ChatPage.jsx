@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { IoSend, IoMic } from "react-icons/io5";
 import { motion } from "framer-motion";
 import useMCPFetcher from "../hooks/useMCPFetcher";
-import ChatMessage from "../components/ChatMessage";
+import ChatMessage from "../components/chatMessage";
 
 export default function ChatPage() {
   const [messages, setMessages] = useState([
