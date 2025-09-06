@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 const MainLayout = ({ children }) => {
   const location = useLocation();
-  const hideFooterPaths = ["/about"]; // Add any other routes where footer should be hidden
+  const hideFooterPaths = ["/about", "/chat"]; // Add any other routes where footer should be hidden
   const hideFooter = hideFooterPaths.includes(location.pathname);
 
   return (
