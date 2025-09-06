@@ -7,8 +7,8 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import WorkExperience from "./pages/WorkExperience";
 import Details from "./pages/Details";
-import Login from "./pages/Login";
-import AddNew from "./pages/AddNew";
+// import Login from "./pages/Login";
+// import AddNew from "./pages/AddNew";
 import ChatPage from "./pages/ChatPage";
 
 // 🔒 Protected Route Wrapper
