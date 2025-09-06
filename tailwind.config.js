@@ -4,6 +4,9 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      FontFamily:{
+        sans: ['Lexend', 'sans-serif'],
+      },
       colors: {
         surface: {
           light: '#ffffff',   // White

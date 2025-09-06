@@ -1,7 +1,8 @@
 // src/pages/Home.jsx
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { MessageCircle } from "lucide-react"; // Chat Icon
 
 const quotes = [
   { text: "Programs must be written for people to read, and only incidentally for machines to execute.", author: "— Harold Abelson" },
@@ -13,6 +14,7 @@ const quotes = [
 
 export default function Home() {
   const [currentQuote, setCurrentQuote] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,9 +24,8 @@ export default function Home() {
   }, []);
 
   return (
-    <section className="px-6 md:px-20 py-20 max-h-screen flex items-start justify-center relative">
+    <section className="px-6 md:px-20 flex flex-col items-start justify-start relative pb-24">
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-12 mt-12">
-
         {/* Left Column */}
         <motion.div
           className="flex-1 text-center md:text-left space-y-6"
@@ -85,6 +86,16 @@ export default function Home() {
           </AnimatePresence>
         </div>
       </div>
+
+      {/* Floating Chat Button */}
+      <motion.button
+        onClick={() => navigate("/chat")}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        className="fixed bottom-6 right-6 p-4 mb-20 rounded-full bg-primary-light dark:bg-primary-dark text-white shadow-xl transition-colors"
+      >
+        <MessageCircle size={28} />
+      </motion.button>
     </section>
   );
 }

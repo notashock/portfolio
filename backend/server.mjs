@@ -2,10 +2,15 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './config/db.js';
+
+// Import existing routes
 import projectRoutes from './routes/projectRoutes.js';
 import skillRoutes from './routes/skillRoutes.js';
 import experienceRoutes from './routes/expRoutes.js';
 import certificationRoutes from './routes/CertificationRoutes.js';
+
+// ✅ Import MCP routes
+import mcpRoutes from './routes/mcpRoutes.js';
 
 // Load environment variables
 dotenv.config();
@@ -24,8 +29,10 @@ app.use(express.json());
 app.use('/projects', projectRoutes);
 app.use('/experience', experienceRoutes);
 app.use('/skills', skillRoutes);
-app.use('/certificates', certificationRoutes); // Assuming certificates are handled in skillRoutes
+app.use('/certificates', certificationRoutes);
 
+// ✅ Add MCP routes
+app.use('/mcp', mcpRoutes);
 
 // Root route
 app.get('/', (req, res) => {
@@ -39,7 +46,9 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 6000;
 app.listen(PORT, () =>
-  console.log(`🚀 Server running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`)
+  console.log(
+    `🚀 Server running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`
+  )
 );

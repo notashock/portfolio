@@ -50,6 +50,7 @@ export default function Header() {
       { name: "Skills", link: "/skills" },
       { name: "Experience", link: "/experience" },
       { name: "Contact", link: "/contact" },
+      { name: "Certifications", link: "/certifications"}
     ];
 
     // Add Home link dynamically if not on home page

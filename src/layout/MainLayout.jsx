@@ -1,16 +1,24 @@
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import { useLocation } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const MainLayout = ({ children }) => {
+  const location = useLocation();
+  const hideFooterPaths = ["/about"]; // Add any other routes where footer should be hidden
+  const hideFooter = hideFooterPaths.includes(location.pathname);
+
   return (
     <div className="bg-surface-light dark:bg-surface-dark text-text-light dark:text-text-dark transition-colors duration-300 min-h-screen flex flex-col">
-      {/* Make header fixed from here */}
+      {/* Fixed Header */}
       <Header />
-      {/* Push content down so it doesn’t hide behind header */}
-      <main className="flex-1 container mx-auto px-4 pt-20 pb-8">
+
+      {/* Page Content */}
+      <main className="container mx-auto px-4 pt-20 pb-8 flex-1">
         {children}
       </main>
-      <Footer />
+
+      {/* Footer that scrolls with page */}
+      {!hideFooter && <Footer />}
     </div>
   );
 };

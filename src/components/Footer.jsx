@@ -16,14 +16,11 @@ export default function Footer() {
   };
 
   return (
-    <footer className="fixed bottom-0 left-0 w-full z-50 py-4 px-6 bg-surface-light/80 
-                       dark:bg-surface-dark/80 shadow-[2px_-2px_8px_-2px] shadow-accent-light/30
-                       dark:shadow-[2px_-2px_8px_-2px] dark:shadow-accent-dark/30
-                       backdrop-blur-md rounded-t-lg overflow-hidden">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <footer className="w-full py-3 px-6 bg-surface-light/80 dark:bg-surface-dark/80 shadow-[2px_-2px_8px_-2px] shadow-accent-light/30 dark:shadow-[2px_-2px_8px_-2px] dark:shadow-accent-dark/30 backdrop-blur-md rounded-t-lg overflow-hidden">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         {/* Copyright */}
         <div className="text-center md:text-left">
-          <p className="font-medium text-heading-light dark:text-heading-dark">
+          <p className="font-medium text-heading-light dark:text-heading-dark text-sm">
             © {new Date().getFullYear()} Kiddo. All rights reserved.
           </p>
           <p className="text-xs text-text-light/70 dark:text-text-dark/70 mt-1">
@@ -32,7 +29,7 @@ export default function Footer() {
         </div>
 
         {/* Social Links */}
-        <div className="flex gap-6">
+        <div className="flex gap-4">
           {[
             { href: "https://github.com/notashock", icon: <FaGithub /> },
             { href: "https://www.linkedin.com/in/ashok-babu-bavireddy-346846258/", icon: <FaLinkedin /> },
@@ -56,8 +53,7 @@ export default function Footer() {
 
       {/* Pulsing Accent Glow */}
       <motion.div
-        className="absolute -top-10 -right-10 w-24 h-24 rounded-full 
-                   bg-accent-light/20 dark:bg-accent-dark/20 blur-3xl"
+        className="absolute -top-8 -right-8 w-20 h-20 rounded-full bg-accent-light/20 dark:bg-accent-dark/20 blur-3xl"
         variants={pulseVariants}
         animate="animate"
       />
