@@ -17,12 +17,6 @@ html, body {
   font-family: 'Lexend', system-ui, Avenir, Helvetica, Arial, sans-serif; /* apply Lexend globally */
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
 /* Optional: style scrollbar for future if needed */
 ::-webkit-scrollbar {
   width: 6px;
@@ -77,4 +71,71 @@ body {
 
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
   background-color: rgba(100, 100, 100, 0.7);
+}
+/* Small devices: phones (up to 640px) */
+@media (max-width: 640px) {
+  header {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  footer {
+    padding: 1rem 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Medium devices: tablets (641px to 768px) */
+@media (min-width: 641px) and (max-width: 768px) {
+  header {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  main {
+    padding: 1.5rem;
+  }
+
+  footer {
+    padding: 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Large devices: laptops (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  header {
+    padding: 1.5rem 3rem;
+    font-size: 1.1rem;
+  }
+
+  main {
+    padding: 2rem;
+  }
+
+  footer {
+    padding: 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Extra large devices: desktops (1025px and up) */
+@media (min-width: 1025px) {
+  header {
+    padding: 2rem 4rem;
+    font-size: 1.2rem;
+  }
+
+  main {
+    padding: 2.5rem;
+  }
+
+  footer {
+    padding: 2.5rem;
+    font-size: 1rem;
+  }
 }
