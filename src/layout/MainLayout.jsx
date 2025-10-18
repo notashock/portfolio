@@ -4,20 +4,20 @@ import Footer from "../components/Footer";
 
 const MainLayout = ({ children }) => {
   const location = useLocation();
-  const hideFooterPaths = ["/about", "/chat"]; // Add any other routes where footer should be hidden
+  const hideFooterPaths = ["/about"];
   const hideFooter = hideFooterPaths.includes(location.pathname);
 
   return (
-    <div className="bg-surface-light dark:bg-surface-dark text-text-light dark:text-text-dark transition-colors duration-300 min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-surface-light dark:bg-surface-dark text-text-light dark:text-text-dark transition-colors duration-300">
       {/* Fixed Header */}
       <Header />
 
       {/* Page Content */}
-      <main className="container mx-auto px-4 pt-20 pb-8 flex-1">
+      <main className="flex-1 container mx-auto px-4 pt-20 pb-8">
         {children}
       </main>
 
-      {/* Footer that scrolls with page */}
+      {/* Footer */}
       {!hideFooter && <Footer />}
     </div>
   );
