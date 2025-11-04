@@ -1,48 +1,72 @@
-// src/pages/Home.jsx
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle } from "lucide-react"; // Chat Icon
+import { MessageCircle } from "lucide-react";
+import { useAppContext } from "../context/AppContext";
 
 const quotes = [
-  { text: "Programs must be written for people to read, and only incidentally for machines to execute.", author: "— Harold Abelson" },
+  {
+    text: "Programs must be written for people to read, and only incidentally for machines to execute.",
+    author: "— Harold Abelson",
+  },
   { text: "With great Power Comes the great Responsibility.", author: "— Ben Parker" },
-  { text: "A very small man can cast a very long Shadow.", author: "— lord Varys" },
-  { text: "Live, Love, Laugh!!, Be the best version of yourself!", author: "— Dhathri Putty", isMine: true },
+  { text: "A very small man can cast a very long Shadow.", author: "— Lord Varys" },
+  { text: "Live, Love, Laugh!! Be the best version of yourself!", author: "— Dhathri Putty", isMine: true },
   { text: "Fall Again, Fail Better!", author: "— Ashok Bavireddy", isMine: true },
 ];
 
 export default function Home() {
   const [currentQuote, setCurrentQuote] = useState(0);
   const navigate = useNavigate();
+  const { isMobile, isTablet } = useAppContext();
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentQuote((prev) => (prev + 1) % quotes.length);
-    }, 4000);
+    const interval = setInterval(
+      () => setCurrentQuote((prev) => (prev + 1) % quotes.length),
+      4000
+    );
     return () => clearInterval(interval);
   }, []);
 
+  const isCompact = isMobile || isTablet;
+  const headingSize = isMobile ? "text-4xl" : isTablet ? "text-5xl" : "text-6xl";
+  const subHeadingSize = isMobile ? "text-xl" : isTablet ? "text-2xl" : "text-3xl";
+  const paddingX = isMobile ? "px-4" : isTablet ? "px-10" : "px-20";
+
   return (
-    <section className="px-6 md:px-20 flex flex-col items-start justify-start relative pb-24">
-      <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-12 mt-12">
-        {/* Left Column */}
+    <section
+      className={`${paddingX} flex flex-col items-center justify-center min-h-[calc(100vh-12rem)] 
+                  text-center transition-all duration-500`}
+    >
+      <div
+        className={`max-w-6xl w-full flex ${
+          isCompact ? "flex-col items-center text-center" : "flex-row items-center text-left"
+        } justify-center gap-12`}
+      >
+        {/* LEFT COLUMN */}
         <motion.div
-          className="flex-1 text-center md:text-left space-y-6"
+          className={`flex-1 space-y-6 ${isCompact ? "" : "pr-8"}`}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-6xl font-bold text-heading-light dark:text-heading-dark">
-            Ashok Babu <span className="text-primary-light dark:text-primary-dark">Bavireddy</span>
+          <h1 className={`${headingSize} font-bold text-heading-light dark:text-heading-dark`}>
+            Ashok Babu{" "}
+            <span className="text-primary-light dark:text-primary-dark">Bavireddy</span>
           </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold text-accent-light dark:text-accent-dark">
-            Engineering Student · Full-Stack Builder
+
+          <h2 className={`${subHeadingSize} font-semibold text-accent-light dark:text-accent-dark`}>
+            Engineering Student · Full-Stack Enthusiast 
           </h2>
-          <p className="text-lg max-w-lg">
-            I craft digital experiences where design meets code.  
-            Always learning. Always building.
+
+          <p
+            className={`text-lg max-w-lg ${
+              isCompact ? "mx-auto" : ""
+            } text-text-light dark:text-text-dark`}
+          >
+            Passionate about crafting seamless full-stack applications that balance design and functionality.
           </p>
+
           <div className="mt-6">
             <Link
               to="/contact"
@@ -56,8 +80,8 @@ export default function Home() {
           </div>
         </motion.div>
 
-        {/* Right Column: Quote Card */}
-        <div className="flex-1 flex justify-center">
+        {/* RIGHT COLUMN — QUOTE CARD */}
+        <div className={`flex-1 flex ${isCompact ? "justify-center mt-10" : "justify-end"}`}>
           <AnimatePresence mode="wait">
             <motion.div
               key={currentQuote}
@@ -87,12 +111,13 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Floating Chat Button */}
+      {/* FLOATING CHAT BUTTON */}
       <motion.button
         onClick={() => navigate("/chat")}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed bottom-6 right-6 p-4 mb-20 rounded-full bg-primary-light dark:bg-primary-dark text-white shadow-xl transition-colors"
+        className={`fixed bottom-40 right-6 p-4 rounded-full bg-primary-light dark:bg-primary-dark 
+                   text-white shadow-xl transition-colors ${isMobile ? "scale-90" : ""}`}
       >
         <MessageCircle size={28} />
       </motion.button>
